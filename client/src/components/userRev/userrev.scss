@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.rev-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 60px;
+    overflow-x: hidden;
+    // border: 2px solid red;
+
+
+    .rev-desc{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 500px;
+        flex: 1.5;
+        font-size: 20px;
+        color: grey;
+        text-align: center;
+
+        .rev-U{
+            font-size: 18px;
+        }
+
+        .rating-stars{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+    }
+    .user-detail{
+        flex-direction: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        b{
+            color: black;
+        }
+    }
+}
+
+.aimateRev{
+    animation: animate .5s ease-in-out;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}

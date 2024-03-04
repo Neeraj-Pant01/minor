@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 99%;
+    height: 99%;
+    // border: 2px solid red;
+    flex-direction: column;
+    gap: 10px;
+
+    .AiOutlineSync{
+        font-size: 40px;
+        animation: loaderRot 1s linear infinite;
+    }
+    b{
+        color: grey;
+        animation: changeCol 1s linear infinite;
+    }
+}
+
+@keyframes loaderRot {
+    0%{
+        transform: rotate(45deg);
+        color: grey;
+    }
+    30%{
+        transform: rotate(90deg);
+        color: grey;
+    }
+    70%{
+        transform: rotate(180deg);
+        color: grey;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes changeCol {
+    0%{
+        color: black;
+    }
+    50%{
+        color: grey;
+    }
+    100%{
+        color: black;
+    }
+}

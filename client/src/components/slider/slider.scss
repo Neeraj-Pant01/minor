@@ -18,9 +18,8 @@
   }
   
   .slider {
-    margin-top: 120px;
-    height: 90%;
-    // border: 2px solid green;
+    height: 300px;
+    border: 2px solid green;
     overflow-x: hidden;
     // background-color: grey;
   
@@ -33,8 +32,8 @@
     }
   
     img {
-        height: 350px;
-        width: 350px;
+        height: 160px;
+        width: 160px;
         border-radius: 10px;
     }
   }
@@ -87,3 +86,27 @@
       }
   }
   
+  @media screen and (max-width: 450px) {
+    .slider {
+      margin-top: 120px;
+      height: 90%;
+      // border: 2px solid green;
+      overflow-x: hidden;
+      display: none;
+      // background-color: grey;
+    
+      .slick-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        background-color: red;
+      }
+    
+      img {
+          height: 330px;
+          width: 330px;
+          border-radius: 10px;
+      }
+    }
+  }

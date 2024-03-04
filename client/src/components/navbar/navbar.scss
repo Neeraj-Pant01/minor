@@ -6,8 +6,16 @@
     position: relative;
     width: calc(100vw - 20px);
     position: sticky;
+    // padding: 5px 0px;
+    // background-color: rgb(235, 232, 232);
+    // background-color: black;
+    // background-color: rgba(0,0,0,0.8);
+    background-color: rgb(235, 232, 232);
     top: 0;
+    // height: 100px;
     z-index: 999;
+    // background-color: black;
+    // border: 2px solid red;
     // overflow-x: hidden;
     // display: flex;
   }
@@ -19,7 +27,11 @@
     align-items: center;
     justify-content: space-around;
     padding: 15px 0px;
-    background-color: white;
+    // background-color: black;
+    // background-color: rgba(0,0,0,0.8);
+    background-color: transparent;
+    position: sticky;
+    top: 0;
     // background-color: lightgray;
   }
   
@@ -34,7 +46,9 @@
     }
   
     a {
-      color: #1F305E;
+      // color: #1F305E;
+      color: white;
+      color: grey;
       // color: #5072A7;
       // color: black;
       margin-right: 20px;
@@ -44,7 +58,9 @@
     .nav-options {
       display: flex;
       align-items: center;
-      color: #034694;
+      // color: #034694;
+      // color: lightgrey;
+      color: black;
       // color: #5072A7;
       gap: 2px;
       text-transform: uppercase;
@@ -57,7 +73,9 @@
     .first{
       // border: 1px solid red;
       font-weight: bolder;
-      color: #5072A7;
+      // color: #5072A7;
+      // color: lightgrey;
+      color: black;
       width: 120px;
     }
   }
@@ -69,11 +87,12 @@
   
     .login {
       background-color: transparent;
-      border: 2px solid #034694;
-      color: #034694;
-      padding: 4px 10px;
+      border: 1px solid black;
+      // color: lightgrey;
+      color: black;
+      padding: 5px 10px;
       font-weight: bold;
-      font-size: 17px;
+      font-size: 15px;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -81,16 +100,17 @@
       cursor: pointer;
     }
     .sell{
-        padding: 3px 10px;
-        color:#1F305E;
+        padding: 5px 10px;
+        // color:lightgrey;
+        color: black;
         // background-color: pink;
         background-color: transparent;
-        border: 2px solid #1F305E;
+        border: 1px solid black;
         outline: none;
         border-radius: 10px;
         cursor: pointer;
         font-weight: bolder;
-        font-size: 18px;
+        font-size: 15px;
         // border: 1px solid #5072A7;
     }
   }
@@ -102,6 +122,7 @@
     width: 500px;
     align-items: center;
     justify-content: center;
+    display: none;
   
     input {
       padding: 10px 20px;
@@ -125,7 +146,9 @@
     opacity: 1;
     width: calc(100% - 170px);
     background-color: rgb(247, 245, 245);
+    // background-color: white;
     min-height: 40px;
+    // opacity: 0.7;
     // margin-bottom: 50px;
   }
   
@@ -142,12 +165,15 @@
     width: calc(100% - 170px);
     background-color: rgb(247, 245, 245);
     height: 40px;
+    // opacity: 0.7;
+    // border: 2px solid red;
   }
   
   
   @media screen and (max-width:440px) {
     .navbar-wrapper{
         position: static;
+        width: 100%;
     }
     .dropmenu{
         display: none;
@@ -158,4 +184,55 @@
     .mid{
         display: none;
     }
+  }
+
+  @media screen and (max-width:450px) {
+    .navbar-wrapper{
+      border-bottom: 1px solid lightgray;
+      width: 100%;
+    }
+    .mid{
+        display: none;
+    }
+    .dropmenu{
+      display: none;
+    }
+    .dropmenu-hide{
+      display: none;
+    }
+    .left{
+      .web-title{
+        font-size: 16px;
+        // display: flex;
+        // align-items: center;
+        // border: 2px solid red;
+      }
+      .first{
+        display: none;
+      }
+      .h{
+        display: none;
+      }
+      .nav-options{
+        font-size: 14px;
+      }
+    }
+    .right{
+      .login{
+        font-size: 14px;
+        padding: 2px;
+      }
+      .sell{
+        font-size: 14px;
+        padding: 2px;
+      }
+    }
+  }
+
+  .pp-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 30px;
+    cursor: pointer;
   }

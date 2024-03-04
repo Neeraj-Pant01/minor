@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.testimonials{
+    // border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px 0px;
+    margin-top: 70px;
+
+    h1{
+        font-size: 34px;
+        font-weight: 600;
+        color: rgba(0,0,0,0.8);
+    }
+
+    p{
+        font-size: 19px;
+        color: grey;
+    }
+    .reviews{
+        display: flex;
+        padding: 0px 100px;
+        width: 100%;
+        // border: 2px solid red;
+        align-items: center;
+        justify-content: center;
+    }
+    .navigations{
+        display: flex;
+        gap: 100px;
+
+        .nav-icon{
+            font-size: 32px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: black;
+                color: white;
+                border-radius: 50%;
+            }
+        }
+    }
+}

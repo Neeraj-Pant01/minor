@@ -17,11 +17,23 @@ const productSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
-    images:{
-        type:[String],
+    image:{
+        type:String,
         required:true
     },
+    images:{
+        type:[String],
+        required:false
+    },
     usedTime:{
+        type:String,
+        required:true
+    },
+    cat:{
+        type:String,
+        required:true
+    },
+    address:{
         type:String,
         required:true
     }

@@ -4,64 +4,44 @@
 }
 .LABEL{
     background-color: rgb(241, 238, 238);
+    background-color: black;
+    background-color: rgba(0,0,0,0.8);
+    background-color: rgb(235, 232, 232);
+    // background-color: darkgrey;
+    margin-top: 100px;
     display: flex;
     padding: 30px 0px 0px 0px;
     flex-direction: column;
+    z-index: 999;
+    padding: 50px 0px;
 
     .label-top{
-        padding: 0px 250px;
         display: flex;
         align-items: center;
-        gap: 20px;
-        // padding: 20px 0px;
+        justify-content: center;
+        padding: 0px 200px;
+        margin-bottom: 40px;
+        gap: 40px;
 
-        .label-left{
-            width: 300px;
 
-            img{
-                width: 200px;
-                height: 200px;
-                border-radius: 50%;
-            }
-        }
-
-        .label-mid{
-            border-right: 3px solid lightgrey;
-            padding: 20px 20px;
-            h1{
-                color: #5072A7;
-
-            }
-        }
-        .label-right{
-            color: #5072A7;
+        .label-top-left{
+            color: grey;
+            // color: black;
+            color: rgba(0,0,0,0.8);
+            font-size: 39px;
+            font-weight: bold;
+            // border: 2px solid red;
+            // width: 400px;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            .platform{
-                display: flex;
-                gap: 10px;
-                align-items: center;
-
-                .AiFillAppstore{
-                    font-size: 28px;
-                    color: black;
-                    cursor: pointer;
-                }
-                .AiFillApple{
-                    font-size: 28px;
-                    color: black;
-                    cursor: pointer;
-                }
-            }
+            align-items: center;
+            justify-content: center;
         }
-    }
-    .label-bottom{
-        background-color: #5072A7 ;
-        // background-color: pink;
-        height: 60px;
-        margin-top: 20px;
+        .label-top-right{
+            // color: lightgrey;
+            color: black;
+            // margin-right: 50px;
+            width: 700px;
+        }
     }
 
     .label-links{
@@ -80,12 +60,134 @@
             gap: 10px;
 
             b{
-                color: grey;
+                color: black;
             }
 
             span{
                 color: grey;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    // .label-top{
+    //     // display: none;
+    //     border: 2px solid red;
+
+    //     .label-left{
+    //         display: none;
+    //     }
+    //     .label-mid{
+    //         display: none;
+    //     }
+    //     .label-right{
+    //         display: none;
+    //     }
+    // }
+    // .label-links{
+    //     display: none;
+    //     border: 2px solid yellow;
+    //     flex-direction: column;
+
+    //     .links{
+    //         display: none;
+    //         border: 2px solid yellow;
+    //     }
+    // }
+    .LABEL{
+        background-color: rgb(241, 238, 238);
+        display: flex;
+        padding: 30px 0px 0px 0px;
+        flex-direction: column;
+        z-index: 999;
+    
+        .label-top{
+            padding: 0px 250px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            display: none;
+            // padding: 20px 0px;
+    
+            .label-left{
+                width: 300px;
+    
+                img{
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                }
+            }
+    
+            .label-mid{
+                border-right: 3px solid lightgrey;
+                padding: 20px 20px;
+                h1{
+                    color: #5072A7;
+    
+                }
+            }
+            .label-right{
+                color: #5072A7;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+    
+                .platform{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+    
+                    .AiFillAppstore{
+                        font-size: 28px;
+                        color: black;
+                        cursor: pointer;
+                    }
+                    .AiFillApple{
+                        font-size: 28px;
+                        color: black;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .label-bottom{
+            background-color: #5072A7 ;
+            // background-color: pink;
+            height: 60px;
+            margin-top: 20px;
+        }
+    
+        .label-links{
+            margin-top: 20px;
+            display: flex;
+            // border: 2px solid black;
+            // align-items: center;
+            // justify-content: center;
+            // background-color: lightgrey;
+            padding: 0px;
+            gap: 30px;
+            flex-direction: column;
+    
+            .links{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                // border: 2px solid green;
+    
+                b{
+                    color: grey;
+                }
+    
+                span{
+                    color: grey;
+                    cursor: pointer;
+                }
             }
         }
     }

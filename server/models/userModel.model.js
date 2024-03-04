@@ -13,6 +13,13 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String
     },
+    mobile:{
+        type:String,
+        unique:true
+    },
+    image:{
+        type:String,
+    }
     
 },{
     timestamps:true

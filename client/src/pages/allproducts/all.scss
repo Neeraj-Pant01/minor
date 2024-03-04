@@ -15,7 +15,7 @@
     h1{
         margin-top: 70px;
     margin-bottom: 30px;
-    color: #5072A7;
+    color: black;
     font-weight: 100;
     font-size: 20px;
     // color: #6CB4EE;
@@ -29,6 +29,7 @@
         justify-content: center;
         gap: 100px;
         width: 90%;
+        color: grey;
 
         .price{
             display: flex;
@@ -44,7 +45,7 @@
                 // border: 1px solid red;
 
                 input{
-                    width: 50px;
+                    width: 100px;
                     border: 1px solid grey;
                     outline: none;
                 }
@@ -59,6 +60,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            display: none;
 
             .sort-options{
                 position: absolute;
@@ -68,7 +70,8 @@
                 // border-radius: 10px;
                 cursor: pointer;
                 border: 1px solid black;
-                bottom: -30px;
+                // bottom: -30px;
+                top: 100px;
                 width: 150px;
                 left: 0;
             }
@@ -82,4 +85,13 @@
         width: 80%;
         row-gap: 25px;
     }
+}
+.apply{
+    padding: 3px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
 }

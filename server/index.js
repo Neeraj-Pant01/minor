@@ -2,6 +2,8 @@ const express = require("express")
 const dotenv = require("dotenv").config()
 const cors = require("cors");
 const connectToDatabase = require("./database/connection");
+const authRoute = require("./routes/auth.route")
+const productRoute = require("./routes/product.route")
 
 const app = express()
 app.use(express.json())
@@ -13,6 +15,9 @@ app.use((err,req,res,next)=>{
 
     return res.status(errorCode).json(errorMessage);
 })
+
+app.use('/api/v1/auth',authRoute)
+app.use('/api/v1/products',productRoute)
 
 const PORT = process.env.PORT || 5000;
 

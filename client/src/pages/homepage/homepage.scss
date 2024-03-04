@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.blur-bg{
+    filter: blur(5px);
+}
+
 .homepage {
     // min-height: 100vh;
     // border: 2px solid red;
@@ -15,7 +19,7 @@
     // background: linear-gradient(rgb(255, 255, 255, 0.7),rgb(255, 255, 255, 0.7)),url("https://wallpaperaccess.com/full/4258490.jpg");
     background-size: cover;
     position: relative;
-    height: 500px;
+    // height: 500px;
     background-repeat: no-repeat;
     // border: 1px solid yellow;
     display: flex;
@@ -26,32 +30,45 @@
 
     .sell {
         position: fixed;
-        top: 140px;
+        top: 80px;
         // border: 2px solid black;
         border-radius: 10px;
-        background-color: white;
+        // background-color: black;
+    background-color: rgb(232, 229, 229);
         width: 500px;
-        height: 520px;
+        height: 600px;
         padding: 20px;
         transition: all 0.3s linear;
-        box-shadow: 0px 0px 5px grey;
-        z-index: 89;
+        box-shadow: 0px 0px 10px lightblue;
+        z-index: 819;
+        animation: show .5s linear;
+        z-index: 999;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
 
 
         .sell-top {
             display: flex;
             align-items: center;
+            color: lightgrey;
+            color: black;
             justify-content: space-between;
+            // border: 1px solid red;
 
             .AiOutlineClose {
                 font-size: 28px;
                 font-weight: bolder;
                 cursor: pointer;
+                color: black;
                 transition: all .2s linear;
-                border: 1px solid grey;
+                border: 3px solid grey;
+                border-radius: 10px;
 
                 &:hover {
-                    color: gray;
+                    color: grey;
+                    border: 3px solid white;
                 }
             }
         }
@@ -59,7 +76,7 @@
         .sell-mid {
             display: flex;
             // border: 2px solid black;
-            padding: 20px;
+            // padding: 20px;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -75,28 +92,32 @@
             .div-img {
                 position: relative;
                 width: 200px;
-                border: 2px solid grey;
+                // border: 2px solid goldenrod;
                 border-radius: 10px;
-                min-height: 150px;
+                height: 100px;
+                height: 200px;;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                background-color: white;
 
                 img {
-                    width: 100%;
-                    height: 140px;
+                    width: 90%;
+                    // height: 100px;
                     object-fit: cover;
                     border-radius: 10px;
+                    color: white;
+                    // border: 2px solid green;
                 }
             }
 
             label {
                 position: absolute;
                 font-size: 28px;
-                color: grey;
-                bottom: -20px;
+                color: goldenrod;
+                bottom: 30px;
                 left: 45%;
-                border: 4px solid grey;
+                border: 4px solid goldenrod;
                 border-radius: 50%;
                 width: 30px;
                 height: 30px;
@@ -104,6 +125,7 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                // border: 2px solid red;
             }
         }
 
@@ -112,11 +134,19 @@
             display: flex;
             flex-direction: column;
             padding: 0px 50px;
-            gap: 20px;
+            gap: 14px;
+
+            .cat-options{
+              padding: 4px;  
+              border: 1px solid grey;
+              outline: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
 
             input{
                 border: 1px solid #5072A7;
-                padding: 5px 20px;
+                padding: 10px 20px;
                 outline: none;
                 border-radius: 6px;
                 // color: grey;
@@ -156,19 +186,28 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background-color: #5072A7;
-                    color: white;
+                    // background-color: #5072A7;
+                    background-color: white;
+                    // color: white;
+                    color: black;
+                    font-weight: bold;
                     border: none;
                     outline: none;
                     border-radius: 5px;
                     padding: 7px 20px;
                     cursor: pointer;
+                    transition: all .2s linear;
+
+                    &:hover{
+                        transform: scale(1.01);
+                    }
                 }
             }
         }
         // .upload-product
     }
 }
+
 
 .products {
     margin-top: 20px;
@@ -183,8 +222,10 @@
         // border: 1px solid black;
         margin-bottom: 20px;
         justify-self: flex-start;
-        font-size: 24px;
+        font-size: 34px;
         color: #5072A7;
+        color: rgba(0,0,0,0.7);
+        font-weight: bold;
         // align-self: flex-start;
     }
 }
@@ -201,3 +242,70 @@
     row-gap: 25px;
     // margin-left: 30px;
 }
+
+.uploaded{
+    height: 99%;
+    width: 99%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color:  black;
+    flex-direction: column;
+
+    b{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .wait{
+        color: green;
+        animation: changeCol2 1s linear infinite;
+    }
+
+    .tick{
+        color: green;
+        font-size: 26px;
+    }
+}
+
+@keyframes changeCol2 {
+    0%{
+        color: green;
+    }
+    50%{
+        color: lightgreen;
+    }
+    100%{
+        color: green;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .homepage{
+        // border: 2px solid red;
+        width: 100%;
+
+        .homepage-wrapper{
+            border: 2px solid green;
+            width: 100%;
+        }
+    }
+    .products-wrapper{
+        justify-content: center;
+    }
+  }
+
+
+
+  @keyframes show {
+    0%{
+        transform: scale(0.3);
+    }
+    50%{
+        transform: scale(0.7);
+    }
+    100%{
+        transform: scale(1);
+    }
+  }
