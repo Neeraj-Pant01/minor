@@ -35,7 +35,7 @@ const Login = () => {
         image:result.user.photoURL
       }).then((res)=>{
         dispatch(login(res.data))
-      response.status === 200 && navigate('/')
+      res.status === 200 && navigate('/')
       })
     }).catch((err)=>console.log(err))
   }

@@ -8,6 +8,8 @@ import SingleProduct from './pages/singleProduct/SingleProduct'
 import Register from './pages/register/Register'
 import Login from './pages/login/Login'
 import { useSelector } from 'react-redux'
+import Seller from './pages/seller/Seller'
+import Hotdeals from './pages/hotdeals/Hotdeals'
 
 const App = () => {
   const [open, setOpen] = useState(false)
@@ -15,7 +17,7 @@ const App = () => {
 
   const user = useSelector((state)=>state.user.currentUser)
 
-  console.log(user)
+  console.log("user is ",user)
 
   const {pathname} = useLocation()
   // console.log("pathname", pathname)
@@ -23,7 +25,7 @@ const App = () => {
   return (
     <>
     {
-      (pathname !== '/login' && pathname !== '/register') &&
+      (pathname !== '/login' && pathname !== '/register' && pathname !== "/hot-deals") &&
       <Navbar setOpen={setOpen} setSearch={setSearch} search={search}/>
     }
     <Routes>
@@ -34,8 +36,11 @@ const App = () => {
       <Route path='/product/:id' element={user ? <SingleProduct /> : <Navigate to={'/login'} />} />
 
       <Route path='/register' element={ !user ? <Register /> : <Navigate to={`/`} />} />
+
+      <Route path='/user/:id' element={user ? <Seller /> : <Navigate to={'/login'} />}></Route>
       
     <Route path='/login' element={ !user ? <Login /> : <Navigate to={`/`} />} />
+    <Route path='/hot-deals' element={user ? <Hotdeals /> : <Navigate to={'/login'} />} />
     </Routes>
     {
       (pathname !== '/login' && pathname !== '/register') &&

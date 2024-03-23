@@ -1,0 +1,92 @@
+.deal{
+    display: flex;
+    // border: 2px solid red;
+    padding: 20px 100px;
+    align-items: center;
+    gap: 50px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    // background-color: rgb(239, 235, 235);
+
+
+    .left{
+        display: flex;
+        flex-direction: column;
+
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .mid-box{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 400px;
+        gap: 10px;
+
+        b{
+            // border: 2px solid red;
+        }
+        p{
+            color: grey;
+            font-size: 15px;
+        }
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        margin-left: 200px;
+        // border: 2px solid red;
+        align-items: flex-start;
+
+        .buy{
+            background-color: white;
+            cursor: pointer;
+            padding: 5px 20px;
+            outline: none;
+            color: green;
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+    }
+   .buying-details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    width: 250px;
+    // border: 2px solid red;
+   }
+   .buying-details-top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+   }
+   .d-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+    .close-icon{
+        font-size: 24px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    p{
+        color: grey;
+    }
+
+    button{
+        border: 1px solid green;
+        outline: none;
+        padding: 5px;
+        color: green;
+        border-radius: 5px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+   }
+}

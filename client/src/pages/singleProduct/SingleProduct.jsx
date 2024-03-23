@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './single.scss';
 import Chat from '../../components/chat/Chat';
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import makeApiRequest from "../../utils/makeApiRequest"
 import { AiOutlineMessage, AiOutlinePhone } from "react-icons/ai"
 
@@ -14,6 +14,10 @@ const SingleProduct = () => {
   const [owner, setOwner] = useState({})
 
   const api = makeApiRequest()
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   useEffect(()=>{
     const loadProduct = async () =>{
@@ -48,7 +52,7 @@ const SingleProduct = () => {
       <div className="right-container">
         {
           chat ?
-            <Chat setChat={setChat} />
+            <Chat setChat={setChat} ownerId={owner?._id}/>
             :
             <>
               <div className="price-info">
@@ -57,15 +61,17 @@ const SingleProduct = () => {
                 <p>{item?.productDesc}</p>
                 <b>{item?.productName}</b>
                 <div className="add-date">
-                  <p>{item?.address}</p>
-                  <p className='dateOfUpload'>{new Date(item?.createdAt).toDateString()}</p>
+                  <p>Address : {item?.address}</p>
+                  <p className='dateOfUpload'>UPLOADED ON : {new Date(item?.createdAt).toDateString()}</p>
                 </div>
               </div>
 
               <div className="owner-info">
               <span style={{fontWeight:"bold", color:"black"}}>SELLER DETAILS</span>
                 <div className="top">
+                  <Link to={`/user/${owner?._id}`} state={owner}>
                   <img src={owner?.image || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4znITWJipPxYSgCLy_sb-G_K8_U3S0byImaqI8rwjo3uO21NVoVg2tkq8ApYgaHHH4oQ&usqp=CAU'} alt='' />
+                  </Link>
                   <p>{owner?.username}</p>
                 </div>
                 <div className="chat-icons">

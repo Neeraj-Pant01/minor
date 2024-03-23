@@ -24,6 +24,8 @@ const Navbar = ({setOpen,setSearch,search}) => {
       }
     }
 
+    console.log(user?.image)
+
     const handleLogOut = () =>{
       localStorage.clear()
       window.location.reload()
@@ -35,7 +37,7 @@ const Navbar = ({setOpen,setSearch,search}) => {
       <div className="left">
         <Link style={{display:"flex", alignItems:"center"}} to={'/'} className='web-title'>
           ITGCART.
-          <img className='pp-image' src='/itg2.jpeg' />
+          {/* <img className='pp-image' src='/itg2.jpeg' /> */}
         </Link>
         <Link to={'/all'} className="nav-options">
             Products
@@ -46,6 +48,7 @@ const Navbar = ({setOpen,setSearch,search}) => {
         <div className="nav-options h">
             Our Data
         </div>
+        <Link style={{color:"black"}} to={'/hot-deals'}>Hourly Deals</Link>
       </div>
       <div className="mid">
         <input type="text" placeholder='search here...'  onChange={handleSearch}/>
