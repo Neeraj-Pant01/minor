@@ -4,24 +4,59 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { RiSendPlane2Fill } from "react-icons/ri";
 import {useSelector} from "react-redux"
 import makeApiRequest from '../../utils/makeApiRequest';
+import {io} from "socket.io-client"
 
 const Chat = ({setChat, ownerId}) => {
   const msgRef = useRef();
   const [conversation, setConversation] = useState(null)
   const [messages, setMessages] = useState([])
   const [currentMessage, setCurrentMessage] = useState("")
+  // const socketRef = useRef(io("ws://localhost:8900"))
+  const socketRef = useRef()
+
+  //arrival message state for the messages send through the sockets
+  const [arrivalMessage, setArrivalMessage] = useState(null)
+
+  const user = useSelector((state)=>state.user.currentUser)
+
+
+  useEffect(()=>{
+    socketRef.current = io("ws://localhost:8900")
+
+    socketRef.current.on('getmessage',(data)=>{
+      setArrivalMessage({
+        senderId:data.senderId,
+        text:data.text,
+        createdAt: Date.now()
+      })
+    })
+  },[])
+
+  //whenever the aarival message is changed we have to update our messages
+  useEffect(()=>{
+    arrivalMessage && 
+    setMessages([...messages,arrivalMessage])
+  },[arrivalMessage])
+
+  useEffect(()=>{
+    socketRef.current.emit('adduser', user._id)
+    //get all the users
+    socketRef.current.on('getusers',users=>{
+      console.log("users", users)
+    })
+  },[user])
+
+
 
   useEffect(() => {
     if (msgRef.current) {
       msgRef.current?.scrollIntoView({behavior:"smooth"})
     }
-  }, [currentMessage]);
+  }, [messages]);
 
-  const user = useSelector((state)=>state.user.currentUser)
   const token = useSelector((state)=>state.user.currentUser.accesstoken)
 
   const api = makeApiRequest(token)
-  const owner = messages
 
   useEffect(()=>{
     const getConversation = async () =>{
@@ -39,6 +74,7 @@ const Chat = ({setChat, ownerId}) => {
     getConversation()
   },[])
 
+  console.log(messages)
 
   useEffect(() => {
     console.log("status", conversation);
@@ -56,51 +92,28 @@ const Chat = ({setChat, ownerId}) => {
   }, [conversation?._id]);
 
 
+const handleSendMessage = async () =>{
 
-  const handleSendMessage = async () => {
-    if (currentMessage.trim() === "") {
-      return;
-    }
-  
-    setMessages((prevMessages) => [...prevMessages, { message: currentMessage, senderId: user._id }]);
-    const newMessageRef = msgRef.current.parentNode.children[messages.length - 1].children[0];
-    msgRef.current = newMessageRef;
-    setCurrentMessage("");
-  
-    // Optimistic update
-    try {
-      const newMessage = await api.post(`${import.meta.env.VITE_REACT_APP_URI}/messeges/`, {
-        conversationId: conversation._id,
-        senderId: user._id,
-        message: currentMessage,
-      });
-    
-      setMessages(prevMessages => {
-        const updatedMessages = [...prevMessages];
-        updatedMessages.pop();
-        updatedMessages.push(newMessage.data.message);
-        return updatedMessages;
-      });
-  
-      setTimeout(() => {
-        if (newMessageRef) {
-          newMessageRef.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }
-      }, 500);
-  
-    } catch (err) {
-      console.log(err.message);
-  
-      // Revert the state if the API call fails
-      setMessages(prevMessages => {
-        const updatedMessages = [...prevMessages];
-        updatedMessages.pop();
-        return updatedMessages;
-      });
-  
-      setCurrentMessage(currentMessage);
-    }
-  };
+  //to send message
+  socketRef.current.emit("sendmessage",{
+    senderId:user._id,
+    receiverId:ownerId,
+    text:currentMessage
+  })
+
+  try{
+    const response = await api.post(`${import.meta.env.VITE_REACT_APP_URI}/messeges/`, {
+      conversationId: conversation._id,
+      senderId: user._id,
+      message: currentMessage,
+    });
+    setMessages([...messages, response.data]);
+    setCurrentMessage("")
+  }catch(err){
+    console.log(err)
+  }
+}
+
   
 
   return (

@@ -217,6 +217,7 @@
     // border: 2px solid red;
     justify-content: center;
     flex-direction: column;
+    background-color: rgb(238, 238, 243);
 
     p{
         // border: 1px solid black;
@@ -225,8 +226,9 @@
         font-size: 34px;
         color: #5072A7;
         color: rgba(0,0,0,0.7);
+        // color: purple;
         font-weight: bold;
-        // align-self: flex-start;
+        // align-self: flex-start;'
     }
 }
 
@@ -234,11 +236,11 @@
     // border: 2px solid orange;
     display: flex;
     // width: fit-content;
-    width: 80%;
-    gap: 25px;
+    width: 90%;
+    gap: 30px;
     // width: max-content;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     row-gap: 25px;
     // margin-left: 30px;
 }
@@ -307,5 +309,24 @@
     }
     100%{
         transform: scale(1);
+    }
+  }
+
+  .allbtns{
+
+    button{
+        &:hover{
+            background-color: #ffba00;
+            transition: all .5s linear;
+        }
+    }
+  }
+
+  @keyframes c-bg{
+    0%{
+        background-color: white;
+    }
+    100%{
+        background-color: #ffba00;
     }
   }

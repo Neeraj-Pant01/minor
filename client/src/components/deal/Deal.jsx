@@ -2,18 +2,21 @@ import React, { useState } from 'react'
 import "./style.scss"
 import { AiFillCloseSquare } from 'react-icons/ai'
 
-const Deal = () => {
+const Deal = ({d}) => {
     const [open, setOpen] = useState(false)
+
+    console.log("ends in",new Date(d.createdAt).getHours() + d.closingTime)
+    console.log("current",new Date().getHours())
     return (
         <div className='deal'>
             <div className="left">
-                <img src='https://products.shureweb.eu/shure_product_db/product_main_images/files/c25/16a/40-/original/ce632827adec4e1842caa762f10e643d.webp' />
-                <div>PRICE : <b style={{ color: "green" }}>999/</b></div>
+                <img src={d?.productImage || "noimg"} />
+                <div>PRICE : <b style={{ color: "green" }}>{d.price}/</b></div>
             </div>
             <div className="mid-box">
-                <b>PRODUCT NAME</b>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro quidem odit voluptas? Alias voluptatem dolorum dignissimos est repudiandae laborum nihil et veritatis, corrupti ab, at, tenetur perferendis suscipit possimus ex voluptate molestias. Magni, facere est. Omnis quibusdam possimus fugiat tempore?</p>
-                <div>used months : <b>9</b></div>
+                <b>{d.productName}</b>
+                <p>{d.productDesc}</p>
+                <div>used months : <b>{d.usedTime}</b></div>
             </div>
             {
                 open ?
@@ -28,7 +31,7 @@ const Deal = () => {
                     :
                     <div className="right">
                         <div>
-                            Deal closes in : <b style={{ color: "red" }}>09:99</b>
+                            Deal closes in : <b style={{ color: "red" }}>{d.closingTime}:00</b>
                         </div>
                         <button className='buy' onClick={() => setOpen(true)}>BUY NOW</button>
                     </div>

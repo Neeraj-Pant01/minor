@@ -2,8 +2,10 @@
 .main-container {
     padding-top: 60px;
     display: flex;
+    flex-direction: column;
     min-height: 90vh;
     width: 85vw;
+    // padding: 0px 200px;
     // border: 2px solid red;
     margin-left: auto;
     margin-right: auto;
@@ -11,25 +13,17 @@
   }
   
   .left-container {
-    flex: .7;
+    flex: 1;
     position: sticky;
+    height: 400px;
     display: flex;
-    background-color: #f2f2f2;
-
-    padding: 50px 0px;
-    // height: 400px;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    border-radius: 10px;
-    height: max-content;
-    // border: 2px solid red;
 
     img{
         // width: 90%;
-        width: 400px;
-        height: 400px;
+        width: 96%;
+        height: 94%;
         border-radius: 10px;
     }
     h1{
@@ -40,11 +34,12 @@
   
   .right-container {
     position: sticky;
-    flex: 1;
+    flex: .7;
     padding: 20px;
     display: flex;
     flex-direction: column;
     background-color: #f2f2f2;
+    background-color: white;
     border-radius: 10px;
     // border: 1px solid grey;
     gap: 30px;
@@ -60,20 +55,20 @@
 
         h1{
             // color: #182f55;
-            color: grey;
-        // color: lightgreen;
-        color: green;
-        color: rgba(0,0,0,0.8);
+        color: black;
+        color: orange;
+        font-weight: bold;
 
         }
 
         p{
             width: 70%;
-            color: black;
+            // color: grey;
+            color: rgba(0,0,0,0.8);
         }
         b{
             // color: #182f55;
-            color: black;
+            color: orange;
         }
 
         .add-date{
@@ -132,8 +127,8 @@
 
         .chat-icon{
             font-size: 34px;
-            // color: black;
-        color: black;
+            background-color: #6f9a37;
+            color: white;
             // border: 2px solid black;
         border:2px solid gray;
 
@@ -142,7 +137,8 @@
             cursor: pointer;
 
             &:hover{
-                color: gray;
+                color: #6f9a37;
+                background-color: white;
                 transition: all .5s linear;
             }
         }
@@ -166,10 +162,11 @@
     }
 
     .more-desc{
-        border: 1px solid lightgreen;
+        // border: 1px solid lightgreen;
         border-radius: 6px;
         padding: 20px;
         color: grey;
+        color: lightgreen;
     }
   }
   /* Add any additional styling as needed */

@@ -1,18 +1,30 @@
 import "./label.scss"
-import { AiFillApple, AiFillAppstore, AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillMobile, AiFillPlaySquare, AiFillTwitterSquare } from "react-icons/ai"
+import { AiFillApple, AiFillAppstore, AiFillCheckCircle, AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillMobile, AiFillPlaySquare, AiFillTwitterSquare } from "react-icons/ai"
+
+const feilds = ["0 Platform Fee", "Easy User Interface", "100's Of Products"]
 
 const Label = () => {
   return (
     <div className='LABEL'>
       <div className="label-top">
-        {/* <div className="label-top-left">
-          ITGCART.
-        </div>
-        <div className="label-top-right">
-        Promoting the reuse of old items benefits the environment and students alike, fostering sustainability and providing affordable resources for education
-        </div> */}
+        <button className="py-3 px-8 border border-[white] rounded-md text-[white]">Lowest Price Guarantee</button>
       </div>
-      <div className="label-links">
+      <div style={{lineHeight:"4rem"}} className="flex items-center justify-center text-[white] text-3xl font-semibold">
+      Start Selling Your Old Stuff, Today!
+      </div>
+      <div className="flex items-center gap-10 mt-8 justify-center">
+        {
+          feilds.map((f,i)=>{
+            return (
+        <div className="flex items-center gap-4">
+          <AiFillCheckCircle className="text-[#ffba00] text-3xl"/> <span className="text-[white]">{f}</span>
+        </div>
+            )
+          })
+        }
+      </div>
+      <div className="flex self-center mt-6 py-3 px-5 rounded-md bg-[#ffba00]">PURCHASE NOW</div>
+      {/* <div className="label-links">
         <div className="links">
           <b>ITGCART</b>
         </div>
@@ -40,7 +52,7 @@ const Label = () => {
       </div>
       <div className="label-bottom">
         
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -44,15 +44,9 @@ const Login = () => {
   return (
     <div className='login-wrapper'>
       <div className="left-login-warpper">
-      <h1 className='title'>ITG-CART</h1>
-        {/* <img src='/itg2.jpeg' className='logo'/> */}
-        {/* {
-          name.map((item,i)=><h1 style={{ transform: i === 3 ? 'rotate(90deg)' : 'none' }}>{item}</h1>)
-        } */}
       </div>
-      <div className="right-login-wrapper">
-      <img src='/itg2.jpeg' className='logo'/>
 
+      <div className="right-login-wrapper">
       <form action='submit' onSubmit={handleLogin}>
         {
           register &&
@@ -79,16 +73,18 @@ const Login = () => {
         {/* <Link to={'/register'}>Register</Link> */}
         {
           register ?
-          <b style={{color:"white", cursor:"pointer"}} onClick={()=>setRegister(false)}>login</b>
+          <b style={{color:"black", cursor:"pointer"}} onClick={()=>setRegister(false)}>login</b>
           :
-          <b style={{color:"white", cursor:"pointer"}} onClick={()=>setRegister(true)}>Register manually</b>
+          <b style={{color:"black", cursor:"pointer"}} onClick={()=>setRegister(true)}>Register manually</b>
         }
-      </form>
-      {
+              {
         !register &&
-        <button style={{marginTop:"20px"}} className='l-btn' onClick={signGoogle}>Sign In With Google</button>
+        <button style={{marginTop:"20px", color:"violet"}} className='l-btn' onClick={signGoogle}>Sign In With Google</button>
       }
+      </form>
       </div>
+
+      <div className="login-mid"></div>
     </div>
   )
 }

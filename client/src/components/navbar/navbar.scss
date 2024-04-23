@@ -10,7 +10,7 @@
     // background-color: rgb(235, 232, 232);
     // background-color: black;
     // background-color: rgba(0,0,0,0.8);
-    background-color: rgb(235, 232, 232);
+    // background-color: rgb(235, 232, 232);
     top: 0;
     // height: 100px;
     z-index: 999;
@@ -49,6 +49,7 @@
       // color: #1F305E;
       color: white;
       color: grey;
+      color: green;
       // color: #5072A7;
       // color: black;
       margin-right: 20px;
@@ -61,6 +62,7 @@
       // color: #034694;
       // color: lightgrey;
       color: black;
+      color: white;
       // color: #5072A7;
       gap: 2px;
       text-transform: uppercase;
@@ -89,7 +91,8 @@
       background-color: transparent;
       border: 1px solid black;
       // color: lightgrey;
-      color: black;
+      // color: black;
+      color: white;
       padding: 5px 10px;
       font-weight: bold;
       font-size: 15px;
@@ -102,7 +105,8 @@
     .sell{
         padding: 5px 10px;
         // color:lightgrey;
-        color: black;
+        // color: black;
+        color: goldenrod;
         // background-color: pink;
         background-color: transparent;
         border: 1px solid black;

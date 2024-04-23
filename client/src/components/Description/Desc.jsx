@@ -15,20 +15,20 @@ const Desc = () => {
       </p>
       <div className='advantages'>
         <div className='ad'>
-            <AiFillShop className='ad-icon' />
-            <b>Eco-Freindly</b>
+            <AiFillShop className='ad-icon text-[orange]' />
+            <b className='text-[orange]'>Eco-Freindly</b>
             <p className='ad-desc'>By reusing items, you're reducing waste and helping the environment.</p>
         </div>
         <div className='ad'>
-            <AiOutlineSync className='ad-icon' />
-            <b>Reuse</b>
+            <AiOutlineSync className='ad-icon text-[goldenrod]' />
+            <b className='text-[goldenrod]'>Reuse</b>
             <p className='ad-desc'>
             Embrace the power of reuse! By leveraging existing resources and solutions.
             </p>
         </div>
         <div className='ad'>
-            <PiPiggyBankFill className='ad-icon'/>
-            <b>Affordable</b>
+            <PiPiggyBankFill className='ad-icon text-[violet]'/>
+            <b className='text-[violet]'>Affordable</b>
             <p className='ad-desc'>You can find high-quality, one-of-a-kind items at great prices when you shop vintage.</p>
         </div>
       </div>

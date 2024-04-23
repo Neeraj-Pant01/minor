@@ -5,6 +5,14 @@ const dealSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    price:{
+        type:Number,
+        required:true
+    },
+    usedTime:{
+        type:Number,
+        required:false
+    },
     productImage:{
         type:String,
         required:true
@@ -17,7 +25,7 @@ const dealSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    Hours:{
+    closingTime:{
         type:Number,
         required:true
     }

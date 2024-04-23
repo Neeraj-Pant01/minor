@@ -1,5 +1,6 @@
 //get a users all items
 const productModel = require("../models/product.model")
+const dealModel = require("../models/deals.model")
 const userModelModel = require("../models/userModel.model")
 const createError = require("../utils/createError")
 
@@ -17,7 +18,7 @@ exports.getSingleUserItems = async (req,res,next) =>{
 
 exports.getHourlyDeals = async (req,res,next) =>{
     try{
-        const deals = await Deals.find();
+        const deals = await dealModel.find();
         if(!deals) return res.status(200).json(deals)
 
         res.status(200).json(deals)
@@ -28,9 +29,9 @@ exports.getHourlyDeals = async (req,res,next) =>{
 
 exports.postHourlyDeal = async (req,res,next) =>{
     try{
-        const user = await userModelModel.findById(req.user.id)
-
-        if(!user) return next(createError(404, "user not found ! sign up to post deals"))
+        const newDeal = new dealModel({...req.body, userId:req.user.id});
+        const savedDeal = await newDeal.save();
+        res.status(200).json(savedDeal);
     }catch(err){
         next(err)
     }
@@ -38,7 +39,12 @@ exports.postHourlyDeal = async (req,res,next) =>{
 
 exports.deleteDeal = async (req,res,next) =>{
     try{
-
+        const item = await dealModel.findById(req.params.id)
+        if(!item) return next(createError(404, "item not found !"))
+        if(item.userId === req.user.id){
+        const deleteItem = await dealModel.findByIdAndDelete(req.params.id)
+        }
+        res.status(200).json(item)
     }catch(err){
         next(err)
     }

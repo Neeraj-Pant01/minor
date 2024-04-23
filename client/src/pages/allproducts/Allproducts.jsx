@@ -45,11 +45,11 @@ const Allproducts = ({search}) => {
           <div className="price">
             <div className="min">
               <b>min</b>
-              <input type="number" ref={min}></input>
+              <input className="px-2" type="number" ref={min}></input>
             </div>
             <div className="min">
               <b>max</b>
-              <input type="number" ref={max}/>
+              <input className="px-2" type="number" ref={max}/>
             </div>
             <button className="apply" onClick={Apply}>APPLY</button>
           </div>

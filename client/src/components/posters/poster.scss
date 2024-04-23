@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.test{
+    animation: animate-up 0.5s linear infinite;
+}
+
+@keyframes animate-up {
+    0%{
+        display: none !important;
+    }
+    100%{
+        display: none !important;
+    }
+}

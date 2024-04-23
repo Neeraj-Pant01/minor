@@ -32,11 +32,11 @@ const Navbar = ({setOpen,setSearch,search}) => {
     }
 
   return (
-    <div className="navbar-wrapper">
+    <div className="navbar-wrapper bg-[black] sticky top-0">
             <div className='navbar'>
       <div className="left">
         <Link style={{display:"flex", alignItems:"center"}} to={'/'} className='web-title'>
-          ITGCART.
+          THRIEFT & Save
           {/* <img className='pp-image' src='/itg2.jpeg' /> */}
         </Link>
         <Link to={'/all'} className="nav-options">
@@ -48,7 +48,7 @@ const Navbar = ({setOpen,setSearch,search}) => {
         <div className="nav-options h">
             Our Data
         </div>
-        <Link style={{color:"black"}} to={'/hot-deals'}>Hourly Deals</Link>
+        <Link style={{color:"goldenrod"}} to={'/hot-deals'}>Hourly Deals</Link>
       </div>
       <div className="mid">
         <input type="text" placeholder='search here...'  onChange={handleSearch}/>
@@ -66,9 +66,9 @@ const Navbar = ({setOpen,setSearch,search}) => {
         }
         {
         user &&
-        <div style={{display:"flex", alignItems:"center", gap:"5px"}}>
+        <div style={{display:"flex", alignItems:"center", gap:"10px"}}>
                   <img className='pp-image' src={user?.image || "https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg"} alt='profile-image' />
-                  <span style={{color:"grey", fontWeight:"bold"}}>{user?.username}</span>
+                  <span style={{color:"green", fontWeight:"bold"}}>{user?.username}</span>
           </div>
       }
       </div>

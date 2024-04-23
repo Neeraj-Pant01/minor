@@ -30,8 +30,17 @@ exports.getAllProducts = async (req,res,next) =>{
             ...(q.search && {productName: {$regex: q.search, $options:"i"}})
         }
             try{
-                const products = q.latest ? await productModel.find().limit(8).sort({createdAt : -1}) : await productModel.find(filters).sort({[q.sort]: -1})
+                const products = q.latest ? await productModel.find().limit(9).sort({createdAt : -1}) : await productModel.find(filters).sort({[q.sort]: -1})
                 res.status(200).json(products)
+    }catch(err){
+        next(err)
+    }
+}
+
+exports.getSuggested = async (req,res,next) =>{
+    try{
+        const data = await productModel.find().limit(6).sort({createdAt : -1})
+        res.status(200).json(data)
     }catch(err){
         next(err)
     }

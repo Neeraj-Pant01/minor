@@ -1,0 +1,134 @@
+.DealsUpload{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .AiFillCloseSquare{
+        cursor: pointer;
+        font-size: 52px;
+        align-self: flex-end;
+        padding: 10px;
+        // background-color: rgb(48, 137, 189);
+        // color: rgb(48, 137, 189);
+    }
+
+    .d-uploaded{
+        display: flex;
+        // border: 2px solid black;
+        height: 150px;
+        margin-top: 40px;
+
+        label{
+            display: flex;
+            flex: .8;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            img{
+                height: 90%;;
+            }
+        }
+        .upload-desc{
+            display: flex;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            textarea{
+                height: 90%;
+                width: 90%;
+                border: 1px solid grey;
+                outline: none;
+                padding: 10px;
+                box-sizing: border-box;
+                resize: none;
+                border-radius: 10px;
+            }
+        }
+    }
+    .product-details{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+        input{
+            width: 70%;
+            border: 1px solid grey;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .u-deal{
+            background-color: transparent;
+            border: 1px solid lightseagreen;
+            padding: 7px 10px;
+            background-color: rgb(48, 137, 189);
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+.loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+
+    .load-icon{
+        width: 50px;
+        display: none;
+        height: 50px;
+        border: 2px dotted black;
+        border-radius: 50%;
+        animation: load-icon-anim 1s linear infinite;
+    }
+
+    span{
+        animation: load-text 1s linear infinite;
+        font-size: 19px;
+    }
+}
+
+@keyframes load-icon-anim{
+    0%{
+        rotate: (45deg);
+    }
+    30%{
+        rotate: (90deg);
+    }
+    60%{
+        rotate: (180deg);
+    }
+    90%{
+        rotate: (360deg);
+    }
+    100%{
+        rotate: (0deg);
+    }
+}
+
+@keyframes load-text{
+    0%{
+        color: black;
+    }
+    30%{
+        color: grey;
+    }
+    60%{
+        color: lightgray;
+    }
+    100%{
+        color: black;
+    }
+}

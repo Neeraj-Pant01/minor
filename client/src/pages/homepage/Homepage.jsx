@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import "./homepage.scss"
 import Product from '../../components/navbar/product/Product'
 import Label from '../../components/navbar/label/Label'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { AiFillCamera, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 import SliderComponent from '../../components/slider/Slider'
-import { sliderData } from '../../data'
+import { posterData, sliderData, whatsnew } from '../../data'
 import Loader from '../../components/loader/Loader'
 import makeApiRequest from '../../utils/makeApiRequest'
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -14,9 +14,14 @@ import { useSelector } from 'react-redux'
 import Header from '../../components/Header/Header'
 import Desc from '../../components/Description/Desc'
 import Testimonials from '../../components/testimonials/Testimonials'
+import Poster from '../../components/posters/Poster'
+import More from '../../components/More/More'
+import StarterComponent from '../../components/startercomponent/StarterComponent'
+import Functionalities from '../../components/functionalities/Functionalities'
 
 
 const Homepage = ({ setOpen, open }) => {
+  const {pathname} = useLocation();
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false)
   const [products, setProducts] = useState([])
@@ -121,6 +126,12 @@ const Homepage = ({ setOpen, open }) => {
 
   return (
     <div className={`homepage`}>
+      <StarterComponent />
+      <div className='flex mt-16 px-20 items-center justify-center gap-[50px] flex-wrap'>
+        {
+          posterData.map((img,i)=><Poster img={img} key={i}/>)
+        }
+      </div>
       <Header />
       <div className={`homepage-wrapper`}>
         {/* <SliderComponent /> */}
@@ -180,7 +191,7 @@ const Homepage = ({ setOpen, open }) => {
           </div>
         }
       </div>
-      <Desc />
+      {/* <Desc /> */}
       <div id='PRODUCTS' className="products">
         <p className='p-head'>Featured Items</p>
         {
@@ -197,8 +208,28 @@ const Homepage = ({ setOpen, open }) => {
           }
         </div>
         }
+        <div className='bg-[#FEBE10] mt-8 px-4 py-3 rounded-md'>LOTS MORE COMING SOON</div>
       </div>
+
+      <Functionalities />
+
       <Testimonials />
+      <div className='flex flex-col mt-20 items-center bg-[#f3f1f1] justify-center border'>
+      <h1 className='text-center text-xl text-[#ffba00] pt-9 bg-[#f3f1f1]'>FIND WHAT'S NEW</h1>
+        <h1 style={{lineHeight:"6rem"}} className='text-6xl font-bold'>WOW !</h1>
+        <p style={{lineHeight:"2.5rem"}} className='text-3xl text-center w-[500px] font-semibold text-[rgba(0,0,0,0.7)]'>Shop New Products with direct easy Conversions with owner</p>
+        <div className='allbtns flex items-center justify-center gap-6 mt-5'>
+          <button style={{backgroundColor:`${pathname === "/" ? "#ffba00" : "white"}`}} className='px-6 bg-[white] py-3 rounded-md'>HOMEPAGE</button>
+          <button className='px-6 bg-[white] py-3 rounded-md'>VIEW ALL</button>
+          <button className='px-6 bg-[white] py-3 rounded-md'>HOURLEY DEALS</button>
+          <button className='px-6 bg-[white] py-3 rounded-md'>UPLOAD PRODUCT</button>
+        </div>
+      </div>
+      <div className='flex items-center justify-center px-[140px] flex-wrap bg-[#f3f1f1] pb-9 pt-10'>
+        {
+          whatsnew.map((d,i)=><More d={d} key={i} />)
+        }
+      </div>
     </div>
   )
 }

@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.anim{
+    animation: animFunct 0.5s linear;
+}
+
+.anim-left{
+    animation: animFunctLeft 0.5s linear;
+}
+
+@keyframes animFunct {
+    0%{
+        transform:  translateX(200px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes animFunctLeft {
+    0%{
+        transform:  translateX(-200px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

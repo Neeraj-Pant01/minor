@@ -6,20 +6,15 @@
 .login-wrapper{
     min-height: 100vh;
     display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // background-color: black;
-    // background-color: rgb(235, 232, 232);
-    background-image: url("/bg.jpeg");
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) , url("/bg.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: linear-gradient(violet, rgb(58, 130, 154));
 
 
     .left-login-warpper{
         flex: 1;
         display: flex;
         flex-direction: column;
+        // background: linear-gradient(rgb(135, 188, 206), violet);
+        // border: 2px solid red;
         // align-items: center;
         // justify-content: center;
         gap: 20px;
@@ -43,11 +38,20 @@
         
     }
 
+    .login-mid{
+        flex: 1;
+        // background: linear-gradient(violet, lightblue);
+        // border: 2px solid white;
+    }
+
     .right-login-wrapper{
-        flex: 2;
-        margin-left: 40px;
+        // background-color: white;
+        // background: linear-gradient(violet, lightblue);
+        flex: 1;
         // border: 2px solid black;
-        margin-top: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .logo{
             width: 150px;
@@ -63,13 +67,23 @@
         flex-direction: column;
         // border: 2px solid black;
         gap: 20px;
+        // background-color: black;
+        background-color: white;
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+        align-items: center;
+        padding: 50px 0px;
+        box-sizing: border-box;
 
         input{
-            width: 400px;
+            width: 80%;
             padding: 14px 20px;
-            border: 1px solid grey;
+            border: none;
+            // border: 1px solid grey;
             outline: none;
-            border-radius: 10px;
+            // border-radius: 10px;
+            border-bottom: 1px solid grey;
             background-color: white;
             // background-color: black;
         }
@@ -78,11 +92,12 @@
             cursor: pointer;
             border-radius: 10px;
             background-color: white;
-            background-color: black;
+            // background-color: black;
             // color: black;
-            color: white;
+            color: black;
             font-weight: bold;
             font-size: 15px;
+            width: 80%;
             // width: 200px;
             
         }
@@ -93,6 +108,7 @@
         p{
             color: lightgrey;
             color: white;
+            color: black;
         }
     }
 }
