@@ -330,3 +330,19 @@
         background-color: #ffba00;
     }
   }
+
+  @media screen and (max-width:500px) {
+    .homepage-wrapper{
+
+        .sell{
+            width: 90%;
+            
+            .sell-bottom{
+
+                input{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+  }

@@ -79,7 +79,7 @@ const Login = () => {
         }
               {
         !register &&
-        <button style={{marginTop:"20px", color:"violet"}} className='l-btn' onClick={signGoogle}>Sign In With Google</button>
+        <button style={{marginTop:"20px", border:"2px solid violet", color:"violet"}} className='l-btn' onClick={signGoogle}>Sign In With Google</button>
       }
       </form>
       </div>

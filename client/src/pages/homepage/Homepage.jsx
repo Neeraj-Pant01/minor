@@ -175,10 +175,10 @@ const Homepage = ({ setOpen, open }) => {
                       <option value="gym">Gym Eqipments</option>
                       <option value="others">Others</option>
                     </select>
-                    <input type="text" name='productName' placeholder='enter your product complete Name' onChange={handleChange} />
+                    <input type="text" name='productName' placeholder='enter your product Name' onChange={handleChange} />
                     <textarea name="productDesc" id="" cols="30" rows="10" placeholder='enter product description...' onChange={handleChange}></textarea>
                     <div className="price-add">
-                      <input type="number" name='price' className='price' placeholder='enter price' onChange={handleChange} />
+                      <input type="number" name='price' className='price' placeholder='price' onChange={handleChange} />
                       <input type="text" name='address' className='price-input' placeholder='enter address' onChange={handleChange} />
                     </div>
                     <div className="upload-product">
@@ -217,15 +217,15 @@ const Homepage = ({ setOpen, open }) => {
       <div className='flex flex-col mt-20 items-center bg-[#f3f1f1] justify-center border'>
       <h1 className='text-center text-xl text-[#ffba00] pt-9 bg-[#f3f1f1]'>FIND WHAT'S NEW</h1>
         <h1 style={{lineHeight:"6rem"}} className='text-6xl font-bold'>WOW !</h1>
-        <p style={{lineHeight:"2.5rem"}} className='text-3xl text-center w-[500px] font-semibold text-[rgba(0,0,0,0.7)]'>Shop New Products with direct easy Conversions with owner</p>
-        <div className='allbtns flex items-center justify-center gap-6 mt-5'>
+        <p style={{lineHeight:"2.5rem"}} className='md:text-3xl text-lg text-center w-[500px] font-semibold text-[rgba(0,0,0,0.7)]'>Shop New Products with direct easy Conversions with owner</p>
+        <div className='allbtns flex items-center justify-center gap-6 mt-5 flex-wrap'>
           <button style={{backgroundColor:`${pathname === "/" ? "#ffba00" : "white"}`}} className='px-6 bg-[white] py-3 rounded-md'>HOMEPAGE</button>
           <button className='px-6 bg-[white] py-3 rounded-md'>VIEW ALL</button>
           <button className='px-6 bg-[white] py-3 rounded-md'>HOURLEY DEALS</button>
           <button className='px-6 bg-[white] py-3 rounded-md'>UPLOAD PRODUCT</button>
         </div>
       </div>
-      <div className='flex items-center justify-center px-[140px] flex-wrap bg-[#f3f1f1] pb-9 pt-10'>
+      <div className='flex items-center justify-center md:px-[140px] flex-wrap border bg-[#f3f1f1] pb-9 pt-10'>
         {
           whatsnew.map((d,i)=><More d={d} key={i} />)
         }

@@ -7,7 +7,7 @@
     position: relative;
     background-color: rgb(240, 238, 238);
     // border: 2px solid red;
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
 
     .hot-deals-navbar{
         // position: fixed;
@@ -34,12 +34,10 @@
 
         button{
             padding: 8px 20px;
-            color: green;
-            border: 1px solid green;
-            background-color: transparent;
+            color: white;
+            background-color: #6f9a37;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
         }
 
     }
@@ -93,4 +91,22 @@
         height: 600px;
 
     }
+}
+
+@media screen and (max-width:500px) {
+    .hot-deals{
+    .hot-deals-navbar{
+        padding: 0px 20px;
+
+        h2{
+            font-size: 12px;
+        }
+        button{
+            font-size: 13px;
+        }
+    }
+    .upload-screen{
+        width: 90%;
+    }
+}
 }

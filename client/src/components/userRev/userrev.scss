@@ -64,3 +64,14 @@
         transform: translateX(0%);
     }
 }
+
+@media screen and (max-width:500px) {
+    .rev-wrapper{
+        flex-direction: column;
+
+    }
+    .rev-U{
+        // border: 2px solid green;
+        font-size: 12px;
+    }
+}

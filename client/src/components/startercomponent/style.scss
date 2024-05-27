@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sg{
+    animation: up-down 1s linear;
+}
+
+@keyframes up-down{
+    0%{
+        transform: translateY(50px);
+        rotate: 20deg;
+    }
+    40%{
+        transform: translateY(100px);
+        rotate: 20deg;
+    }
+    100%{
+        transform: translateY(0px);
+        rotate: 20deg;
+    }
+}

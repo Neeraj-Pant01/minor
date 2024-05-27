@@ -4,6 +4,7 @@
 }
 
 .allproducts{
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,4 +102,27 @@
     outline: none;
     cursor: pointer;
     border-radius: 4px;
+}
+
+
+@media screen and (max-width:500px) {
+    .allproducts{
+
+        h1{
+            text-align: center;
+        }
+
+        .sort{
+            display: none;
+            b{
+                font-size: 10px;
+            }
+        }
+        .price{
+            border: 2px solid yellow;
+        }
+        button{
+            font-size: 14px;
+        }
+    }
 }

@@ -6,7 +6,8 @@
 .login-wrapper{
     min-height: 100vh;
     display: flex;
-    background: linear-gradient(violet, rgb(58, 130, 154));
+    background: linear-gradient(rgb(93, 41, 93), rgb(58, 130, 154));
+    // background: linear-gradient(black, rgba(0,0,0,0.7));
 
 
     .left-login-warpper{
@@ -125,4 +126,25 @@
     font-size: 15px;
     // width: 200px;
     
+}
+
+@media screen and (max-width:500px) {
+    .login-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    .left-login-warpper{
+        display: none;
+        border: 2px solid gold;
+    }
+    .right-login-wrapper{
+        // border: 2px solid red;
+        width: 100%;
+    }
+    .login-mid{
+        display: none;
+        border: 2px solid orange;
+    }
+}
 }

@@ -9,7 +9,7 @@ const Label = () => {
       <div className="label-top">
         <button className="py-3 px-8 border border-[white] rounded-md text-[white]">Lowest Price Guarantee</button>
       </div>
-      <div style={{lineHeight:"4rem"}} className="flex items-center justify-center text-[white] text-3xl font-semibold">
+      <div style={{lineHeight:"4rem"}} className="flex items-center justify-center text-[white] text-3xl font-semibold text-center">
       Start Selling Your Old Stuff, Today!
       </div>
       <div className="flex items-center gap-10 mt-8 justify-center">

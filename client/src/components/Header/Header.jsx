@@ -3,7 +3,7 @@ import "./header.scss"
 
 const Header = () => {
   return (
-    <div className='header'>
+    <div className='hidden md:header'>
         <h1>
       {/* Explore the Charm of Pre-Loved Treasures */}
       Small Changes, Big Impact: Embrace Reduce, Reuse, Recycle!

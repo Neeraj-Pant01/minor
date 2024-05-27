@@ -5,7 +5,6 @@
   .navbar-wrapper{
     position: relative;
     width: calc(100vw - 20px);
-    position: sticky;
     // padding: 5px 0px;
     // background-color: rgb(235, 232, 232);
     // background-color: black;
@@ -30,7 +29,8 @@
     // background-color: black;
     // background-color: rgba(0,0,0,0.8);
     background-color: transparent;
-    position: sticky;
+    background-color: inherit;
+    position: fixed;
     top: 0;
     // background-color: lightgray;
   }
@@ -47,9 +47,10 @@
   
     a {
       // color: #1F305E;
-      color: white;
-      color: grey;
-      color: green;
+      // color: white;
+      // color: grey;
+      // color: green;
+      color: #ffba00;
       // color: #5072A7;
       // color: black;
       margin-right: 20px;
@@ -57,6 +58,23 @@
     }
   
     .nav-options {
+      display: flex;
+      align-items: center;
+      // color: #034694;
+      // color: lightgrey;
+      color: black;
+      color: grey;
+      // color: #5072A7;
+      gap: 2px;
+      text-transform: uppercase;
+  
+      .AiOutlineArrowDown {
+        color: grey;
+        cursor: pointer;
+      }
+    }
+
+    .change-col{
       display: flex;
       align-items: center;
       // color: #034694;
@@ -72,6 +90,8 @@
         cursor: pointer;
       }
     }
+
+
     .first{
       // border: 1px solid red;
       font-weight: bolder;
@@ -88,32 +108,36 @@
     gap: 10px;
   
     .login {
-      background-color: transparent;
+      background-color: white;
       border: 1px solid black;
       // color: lightgrey;
       // color: black;
-      color: white;
+      color: black;
       padding: 5px 10px;
-      font-weight: bold;
       font-size: 15px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      gap: 5px;
     }
     .sell{
         padding: 5px 10px;
         // color:lightgrey;
         // color: black;
-        color: goldenrod;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        color: white;
         // background-color: pink;
-        background-color: transparent;
+        background-color: #6f9a37;
         border: 1px solid black;
         outline: none;
         border-radius: 10px;
         cursor: pointer;
-        font-weight: bolder;
+        // font-weight: bolder;
         font-size: 15px;
         // border: 1px solid #5072A7;
     }
@@ -223,12 +247,15 @@
     }
     .right{
       .login{
-        font-size: 14px;
-        padding: 2px;
+        font-size: 12px;
+        padding: 5px 0px;
+        width: 150px;
       }
       .sell{
-        font-size: 14px;
-        padding: 2px;
+        font-size: 12px;
+        padding: 5px 0px;
+        width: 150px;
+        // display: none;
       }
     }
   }
@@ -239,4 +266,14 @@
     border-radius: 50%;
     margin-left: 30px;
     cursor: pointer;
+  }
+
+  @media screen and (max-width:500px) {
+    .nav-options{
+      font-size: 10px;
+      // border: 2px solid red;
+    }
+    .left{
+      flex-wrap: wrap;
+    }
   }

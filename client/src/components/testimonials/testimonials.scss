@@ -47,3 +47,19 @@
         }
     }
 }
+
+@media screen and (max-width:500px) {
+    .testimonials{
+        // border: 2px solid gold;
+
+        h1{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        .reviews{
+            flex-direction: column;
+        }
+    }
+}

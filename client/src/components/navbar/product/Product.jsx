@@ -1,11 +1,19 @@
 import {AiOutlineHeart, AiOutlineLink } from "react-icons/ai"
 import "./product.scss"
 import {Link} from "react-router-dom"
+import { useInView } from "react-intersection-observer"
 
 const Product = ({p}) => {
+
+  const {ref, inView} = useInView({
+    threshold : 0.5
+  })
+
+  const animationClass = inView ? 'move' : ''
+
   return (
     <Link to={`/product/${p._id}`}>
-        <div className='Product shadow-md'>
+        <div ref={ref} className={`Product ${animationClass} shadow-md`}>
       <div className="product-top relative">
         <div className="absolute w-[100%] h-[240px] bg-[rgba(0,0,0,0.4)] rounded-lg"></div>
         <img src={p?.image}></img>
