@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom"
 import "./label.scss"
 import { AiFillApple, AiFillAppstore, AiFillCheckCircle, AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillMobile, AiFillPlaySquare, AiFillTwitterSquare } from "react-icons/ai"
 
 const feilds = ["0 Platform Fee", "Easy User Interface", "100's Of Products"]
 
 const Label = () => {
+  const navigate = useNavigate()
   return (
     <div className='LABEL'>
       <div className="label-top">
@@ -23,7 +25,7 @@ const Label = () => {
           })
         }
       </div>
-      <div className="flex self-center mt-6 py-3 px-5 rounded-md bg-[#ffba00]">PURCHASE NOW</div>
+      <div className="flex self-center mt-6 py-3 px-5 rounded-md bg-[#ffba00] cursor-pointer" onClick={()=>navigate('/all')}>PURCHASE NOW</div>
       {/* <div className="label-links">
         <div className="links">
           <b>ITGCART</b>

@@ -53,12 +53,12 @@ const Navbar = ({setOpen,setSearch,search}) => {
             Products
         </Link>
         <div className="nav-options h">
-            Customers
+            {/* Customers */}
         </div>
         <div className="nav-options h">
-            Our Data
+            {/* Our Data */}
         </div>
-        <Link className={location.pathname === '/hot-deals' ? 'change-col' : 'nav-options'} to={'/hot-deals'} onClick={()=>changeClass('/hot-deals')}>Hourly</Link>
+        <Link className={location.pathname === '/hot-deals' ? 'change-col' : 'nav-options'} to={'/hot-deals'} onClick={()=>changeClass('/hot-deals')}>Deals</Link>
       </div>
       <div className="mid">
         <input type="text" placeholder='search here...'  onChange={handleSearch}/>

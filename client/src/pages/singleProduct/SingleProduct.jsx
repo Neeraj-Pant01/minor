@@ -93,7 +93,7 @@ const SingleProduct = () => {
                     <p>Address : {item?.address}</p>
                     <p className='dateOfUpload'>UPLOADED ON : {new Date(item?.createdAt).toDateString()}</p>
                   </div>
-                  <button className='bg-[#ffba00] rounded-md py-2 px-4 text-[white]'>BUY NOW</button>
+                  <button className='bg-[#ffba00] rounded-md py-2 px-4 text-[white]'>{item?.productName}</button>
                 </div>
 
                 <div className="owner-info border-2 rounded-md">
@@ -106,7 +106,9 @@ const SingleProduct = () => {
                   </div>
                   <div className="chat-icons">
                     <span><AiOutlineMessage className='chat-icon' onClick={() => setChat(true)} /></span>
+                    <a href={`tel:${owner?.mobile}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <span><AiOutlinePhone className='chat-icon' /></span>
+                    </a>
                   </div>
                   {/* <b onClick={() => setChat(true)}>CHAT WITH OWNER</b> */}
                 </div>

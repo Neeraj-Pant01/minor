@@ -30,11 +30,11 @@ const StarterComponent = () => {
         </div>
       <div className='hidden md:block md:flex-1'>
         <div className='relative h-[100%]'>
-          <img ref={ref} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXDvxdIOq6vw4164tWcR9Wz6DnVmkuLpiBhFAbgBPwg&s' className={`${animatedClass} w-[50%] absolute rounded-lg rotate-[20deg] right-10`}/>
+          <img ref={ref} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXDvxdIOq6vw4164tWcR9Wz6DnVmkuLpiBhFAbgBPwg&s' className={`${animatedClass} w-[50%] absolute rounded-lg rotate-[20deg] right-10`} />
 
           <img ref={ref} src='https://5.imimg.com/data5/SELLER/Default/2022/11/BI/GR/DM/42341821/second-hand-laptop.jpg' className={`w-[40%] mt-7 rotate-[20deg] rounded-lg`} />
 
-          <img ref={ref} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGllis6mTlEOrgUbqDC56b5x_B7IyS2zTIAcfzuwPrIw&s' className={`w-[30%] rotate-[20deg] absolute bottom-56 rounded-lg`}/>
+          <img ref={ref} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGllis6mTlEOrgUbqDC56b5x_B7IyS2zTIAcfzuwPrIw&s' className={`w-[30%] rotate-[20deg] absolute bottom-56 rounded-lg`} />
 
           <img ref={ref} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMR9fNn7zGVZqhFBHn75ofElc9Lua29a3y2-Kpo3vAWQ&s' className={`w-[40%] rotate-[20deg] right-[30%] absolute bottom-20 rounded-lg`} />
 

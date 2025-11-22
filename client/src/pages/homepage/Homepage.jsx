@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./homepage.scss"
 import Product from '../../components/navbar/product/Product'
 import Label from '../../components/navbar/label/Label'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AiFillCamera, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 import SliderComponent from '../../components/slider/Slider'
 import { posterData, sliderData, whatsnew } from '../../data'
@@ -27,6 +27,8 @@ const Homepage = ({ setOpen, open }) => {
   const [products, setProducts] = useState([])
   const [success, setSuccess] = useState(false)
   const [productsLoading, setProductsLoading] = useState(false)
+
+  const navigate = useNavigate()
 
   const [productDetails, setProductDetails] = useState({
     productName: "",
@@ -127,7 +129,7 @@ const Homepage = ({ setOpen, open }) => {
   return (
     <div className={`homepage`}>
       <StarterComponent />
-      <div className='flex mt-16 px-20 items-center justify-center gap-[50px] flex-wrap'>
+      <div className='flex mt-16 md:px-20 px-2 items-center justify-center md:gap-[50px] gap-4 md:flex-wrap'>
         {
           posterData.map((img,i)=><Poster img={img} key={i}/>)
         }
@@ -220,9 +222,9 @@ const Homepage = ({ setOpen, open }) => {
         <p style={{lineHeight:"2.5rem"}} className='md:text-3xl text-lg text-center w-[500px] font-semibold text-[rgba(0,0,0,0.7)]'>Shop New Products with direct easy Conversions with owner</p>
         <div className='allbtns flex items-center justify-center gap-6 mt-5 flex-wrap'>
           <button style={{backgroundColor:`${pathname === "/" ? "#ffba00" : "white"}`}} className='px-6 bg-[white] py-3 rounded-md'>HOMEPAGE</button>
-          <button className='px-6 bg-[white] py-3 rounded-md'>VIEW ALL</button>
-          <button className='px-6 bg-[white] py-3 rounded-md'>HOURLEY DEALS</button>
-          <button className='px-6 bg-[white] py-3 rounded-md'>UPLOAD PRODUCT</button>
+          <button className='px-6 bg-[white] py-3 rounded-md' onClick={()=>navigate('/all')}>VIEW ALL</button>
+          <button className='px-6 bg-[white] py-3 rounded-md' onClick={()=>navigate('/hot-deals')}>HOURLEY DEALS</button>
+          {/* <button className='px-6 bg-[white] py-3 rounded-md'>UPLOAD PRODUCT</button> */}
         </div>
       </div>
       <div className='flex items-center justify-center md:px-[140px] flex-wrap border bg-[#f3f1f1] pb-9 pt-10'>

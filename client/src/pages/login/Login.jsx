@@ -66,7 +66,7 @@ const Login = () => {
         }
         {
           !register ?
-        <p>Dont't have an account ?</p>
+        <p>Don't have an account ?</p>
         :
         <p>Already have an account</p>
         }
